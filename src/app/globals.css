@@ -10,12 +10,40 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --splash-background: #FED253;
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--splash-background);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.header-text {
+  p{
+    text-shadow: 1px 2px 4px black;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  text-align: center;
+}
+
+.homepage-btn {
+  background-color: #4C8FAB;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 8px;
+  width: 35%;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.splash-image{
+  justify-self: flex-end;
 }
