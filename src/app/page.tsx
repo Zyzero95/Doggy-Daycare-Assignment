@@ -14,7 +14,7 @@ export default function Home() {
         <p>DOGGY</p>
         <p>DAYCARE</p>
       </article>
-      <button className="homepage-btn" onClick={() => router.push("/dogs/home")}>OUR DOGS</button>
+      <button className="homepage-btn" onClick={() => router.push("/dogs")}>OUR DOGS</button>
       <Image
         className="splash-image"
         src={splashPic}

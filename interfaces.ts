@@ -1,5 +1,4 @@
 export interface dogAPIData {
-    id: number,
     name: string,
     sex: string,
     breed: string,
