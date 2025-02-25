@@ -24,13 +24,98 @@ body {
   align-items: center;
   justify-content: space-evenly;
   height: 100vh;
+  width: 100vw;
 }
 
-h1 {
-  text-shadow: 1px 2px 4px black;
-  font-size: 40px;
-  font-weight: 700;
+main {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  h1 {
+    grid-column: span 2;
+    text-shadow: 1px 2px 4px black;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .search-btn {
+    grid-column: 1;
+    justify-self: center;
+    width: 90%;
+  }
+
+  .filter-btn {
+    grid-column: 2;
+    justify-self: center;
+    width: 90%;
+  }
+
+  .bg-green {
+    border: 8px solid #25A165
+  }
+
+  .bg-red {
+    border: 9px solid #C3438A
+  }
+
+  .dogCardLink {
+    grid-column: span 2;
+    
+  }
+
+  .dogCard {
+    grid-column: span 2;
+    justify-self: center;
+    margin: 0.8rem;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+
+    .dogImg {
+      grid-column: span 3;
+      width: 100%;
+    }
+
+    .dogAge {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .dogBreed {
+      font-size: 0.75rem;
+      margin-left: 5px;
+    }
+
+    .dogOwner {
+      font-size: 0.75rem;
+      grid-row: 4;
+      grid-column: span 3;
+      margin-left: 5px;
+      margin-bottom: 15px;
+    }
+
+    .dogName {
+      font-size: 20px;
+      font-weight: 700;
+      margin-left: 5px;
+    }
+
+    .genderImg {
+      filter: brightness(0%);
+      grid-column: 2;
+    }
+  }
 }
+
+
+
+
 
 .header-text {
   p{

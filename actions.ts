@@ -13,3 +13,15 @@ export async function fetchDogs(): Promise<dogAPIData[]> {
     
     return data;
 }
+
+export async function fetchDog(chipNumber: number) {
+    const data = await fetchDogs();
+    const dogData = [];
+
+    for(let i = 0; i<data.length; i++){
+        if(data[i].chipNumber === chipNumber){
+            dogData.push(data[i]);
+        }
+    }
+    return dogData;
+}
