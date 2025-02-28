@@ -1,0 +1,24 @@
+.navWrapper {
+display: grid;
+width: 100%;
+grid-template-columns: repeat(5, auto);
+justify-content: center;
+
+.linkPrev,
+.linkNext {
+    color: black;
+    border: 1px solid white;
+    box-shadow: 0px 0px 3px black;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+}
+
+.pageInfo {
+    color: black;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+}
+

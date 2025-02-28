@@ -5,7 +5,7 @@ import femaleSymbol from "@/app/images/femalesymbol.png";
 import maleSymbol from "@/app/images/malesymbol.png";
 import Link from 'next/link';
 
-interface DogData {
+export interface DogData {
     data: dogAPIData
 }
 

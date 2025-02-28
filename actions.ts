@@ -10,18 +10,9 @@ export async function fetchDogs(): Promise<dogAPIData[]> {
         throw new Error(`Error HTTP status: ${response.status}`);
     }
     const data = await response.json();
+    for(let i = 0; i < data.length; i++){
+        data[i].id = i + 1;
+    }
     
     return data;
-}
-
-export async function fetchDog(chipNumber: number) {
-    const data = await fetchDogs();
-    const dogData = [];
-
-    for(let i = 0; i<data.length; i++){
-        if(data[i].chipNumber === chipNumber){
-            dogData.push(data[i]);
-        }
-    }
-    return dogData;
 }

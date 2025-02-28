@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { fetchDogs } from "../../../actions";
 import DogCard from "../components/dogcard";
 
-export default async function Page() {
+export default async function Page(){
     const data = await fetchDogs();
     return (
     <main>
