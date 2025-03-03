@@ -3,12 +3,28 @@ import DogCard from "./dogcard";
 
 // Tutorial for DogList https://www.youtube.com/watch?v=QoMHwks6hUA
 
-const DogList = async ({ query }: {query: string}) => {
+const DogList = async ({ query, filter }: {query: string, filter: string}) => {
     const dogs = await fetchDogs();
 
-    const filteredDogs = Array.isArray(dogs) ? dogs.filter((dog) => {
+    const filterDogsPresent = dogs.filter((dog) => {
+      if(filter === "present" && dog.present === true){
+        return dog;
+      }
+      else if(filter === "notpresent" && dog.present === false){
+        return dog;
+      }
+    })
+
+  const filteredDogs = Array.isArray(dogs) ? 
+    (filterDogsPresent.length === 0 ? 
+      dogs.filter((dog) => {
         return dog.name.toLowerCase().includes(query.toLowerCase());
-    }) : [];
+      }) : 
+      filterDogsPresent.filter((dog) => {
+        return dog.name.toLowerCase().includes(query.toLowerCase());
+      })
+    ) : [];
+
   return (
     <div>
       {Array.isArray(dogs) && dogs.length === 0 && (
