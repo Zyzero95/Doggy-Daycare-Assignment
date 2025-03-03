@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 
+// Search and Filter components works the same way, they only return different DOM elements.
+
 function Filter() {
     const [selectedOption, setSelectedOption] = useState("DEFAULT")
 

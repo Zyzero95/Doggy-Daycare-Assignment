@@ -6,6 +6,7 @@ import DogCard from "./dogcard";
 const DogList = async ({ query, filter }: {query: string, filter: string}) => {
     const dogs = await fetchDogs();
 
+    // Filter dogs if filter URL contains present or notpresent.
     const filterDogsPresent = dogs.filter((dog) => {
       if(filter === "present" && dog.present === true){
         return dog;
@@ -15,6 +16,7 @@ const DogList = async ({ query, filter }: {query: string, filter: string}) => {
       }
     })
 
+  // If URL for filter is empty we use the default API JSON, if filter is used then we use that array instead to find dogs that includes user input letters.
   const filteredDogs = Array.isArray(dogs) ? 
     (filterDogsPresent.length === 0 ? 
       dogs.filter((dog) => {
