@@ -1,14 +1,16 @@
-import { fetchDogs } from "../../../actions";
-import DogCard from "../components/dogcard";
 
-export default async function Page(){
-    const data = await fetchDogs();
+import Search from "../components/Search";
+import DogList from "../components/DogList";
+
+export default async function Page({searchParams}: {searchParams?: {query?: string;};}) {
+    const query = searchParams?.query || '';
+
     return (
     <main>
         <h1>OUR DOGS</h1>
-        <button className="search-btn">Search</button>
+        <Search />
         <button className="filter-btn">Filter</button>
-        {data.map((dog) => <DogCard key={dog.chipNumber} data={dog}  />)}
+        <DogList query={query}/>
     </main>
     )
 }

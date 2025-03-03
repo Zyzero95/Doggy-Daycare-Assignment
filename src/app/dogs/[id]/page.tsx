@@ -5,11 +5,12 @@ import NotFound from "@/app/utils/not-found";
 import { getPrevAndNext} from "@/app/utils/getPrevAndNext";
 import RenderPrevAndNext from "@/app/utils/getPrevAndNext";
 import Link from "next/link";
+import PresentToggle from "@/app/components/PresentToggle";
 
 export default async function DogPage({params}: {params: Promise<{id:string}>}) {
     const id = (await params).id;
     const dogList = await fetchDogs();
-
+    
     const dogObj = dogList.find((dog) => dog.chipNumber === id)
     const nav = getPrevAndNext(id, dogList);
 
@@ -23,6 +24,7 @@ export default async function DogPage({params}: {params: Promise<{id:string}>}) 
     return (
         <div className={styles.profileBody}>
             <header className={styles.profileHeader}>
+                <Link className={styles.profileHomeLink} href="/dogs">Home</Link>
                 <Image 
                     src={dogObj.img}
                     alt="doggo"
@@ -33,9 +35,9 @@ export default async function DogPage({params}: {params: Promise<{id:string}>}) 
             <main className={styles.profileMain}>
                 <div className={styles.profileWrapper}>
                 <h2>{dogObj.name}</h2>
-                <label htmlFor="present" className={styles.isPresent}>Is present
-                    {dogObj.present === true? <p id="present">✅</p> : <p id="present">❌</p>}
-                </label>
+                <div className={styles.isPresent}>
+                    <PresentToggle present={dogObj.present} />
+                </div>
                 <label htmlFor="dogname">Name:
                     <p id="dogname">{dogObj.name}</p>
                 </label>
@@ -61,7 +63,6 @@ export default async function DogPage({params}: {params: Promise<{id:string}>}) 
             </main>
             <footer className={styles.profileFooter}>
                 <RenderPrevAndNext index={nav.index} arr={dogList} prev={nav.prev} next={nav.next}/>
-                <Link className={styles.profileHomeLink} href="/dogs">Home</Link>
             </footer>
         </div>
     )

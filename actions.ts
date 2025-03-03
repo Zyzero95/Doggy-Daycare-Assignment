@@ -10,6 +10,7 @@ export async function fetchDogs(): Promise<dogAPIData[]> {
         throw new Error(`Error HTTP status: ${response.status}`);
     }
     const data = await response.json();
+    
     for(let i = 0; i < data.length; i++){
         data[i].id = i + 1;
     }

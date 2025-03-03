@@ -8,6 +8,17 @@
 
 .profileHeader {
     grid-row: 1;
+
+    .profileHomeLink {
+        color: black;
+        box-shadow: 0px 0px 3px black;
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: absolute;
+        background-color: white;
+    }
 }
 
 .profileMain {
@@ -70,11 +81,4 @@
     grid-template-rows: repeat(2, 1fr);
     display: grid;
 
-    .profileHomeLink {
-        color: black;
-        grid-row: 1;
-        justify-self: center;
-        box-shadow: 0px 0px 3px black;
-        margin-left: 2rem;
-    }
 }

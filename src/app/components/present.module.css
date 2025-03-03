@@ -1,0 +1,13 @@
+.toggleWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+
+    .presentCheckbox {
+        justify-self: end;
+    }
+
+    .presentIcon {
+        justify-self: start;
+    }
+}
